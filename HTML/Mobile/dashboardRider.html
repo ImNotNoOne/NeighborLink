@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .mobile-container{
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+            width: 400px;
+            height: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #profile-button {
+            position: absolute;
+            top: 20px;  /* Adjusted to vertically center with the search bar */
+            right: 10px;
+            border: none;
+            background: url('resources/profile.png') no-repeat center center;  /* Placeholder profile image */
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;  /* Makes the button round */
+            cursor: pointer;
+        }
+        #search-container {
+            margin: 20px;
+            width:90%;
+            display:flex;
+            justify-content: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px;
+            box-sizing: border-box;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+        #map-image {
+            width: 90%;
+            height: 60%;
+            background: url('resources/map.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid #ccc;
+        }
+        #button-container {
+            margin-top: 20px;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #bottom-menu-bar-container{
+            display: flex;
+            margin-top: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class = "mobile-container">
+        <button id="profile-button"></button> 
+        <div id="search-container">
+            <input type="text" placeholder="Enter your destination...">
+           
+        </div>
+        <div id="search-container">
+            <input type="text" placeholder="Enter your departure time">
+           
+        </div>
+        <div id="map-image"></div>
+        <div id="button-container">
+            <button type="button">Request Ride</button>
+            <button type="button">Cancel</button>
+        </div>
+
+        <div id="bottom-menu-bar-container">
+            <button type="button">New Ride</button>
+            <button type="button">My Ride</button>
+            <button type="button">My Profile</button>
+            <button type="button">Message</button>
+        </div>
+    </div>
+</body>
+</html>

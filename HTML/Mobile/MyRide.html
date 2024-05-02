@@ -13,9 +13,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            position: relative;
         }
-        .mobile-container{
+        .mobile-container {
             background-color: #ffffff;
             padding: 40px;
             border-radius: 8px;
@@ -25,8 +26,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
-        
         button {
             padding: 10px 20px;
             background-color: #007bff;
@@ -50,6 +51,18 @@
             background-color: #fffafa;
             margin-top: 10px;
         }
+        .bottom-menu-bar-container {
+            position: absolute;
+            bottom: 10px;
+            width: 90%;
+            display: flex;
+            justify-content: space-between; 
+        }
+        .menu-img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -72,11 +85,26 @@
             <p>Money Made/Spend</p>
             <p>Comment</p>
         </div>
-        <div id="bottom-menu-bar-container">
-            <button type="button">Dashboard</button>
-            <button type="button">My Ride</button>
-            <button type="button">My Profile</button>
+        <div class="bottom-menu-bar-container">
+            <img src="resource/home_icon.png" class="menu-img" onclick="navigateToDashBoard()">
+            <img src="resource/rider_icon.png" class="menu-img" onclick="navigateToMyRide()">
+            <img src="resource/user_icon.png" class="menu-img" onclick="navigateToMyProfile()">
+            <img src="resource/chat_icon.png" class="menu-img" onclick="navigateToMyMessage()">
         </div>
     </div>
 </body>
+<script>
+    function navigateToDashBoard(){
+        window.location.href = "dashboardDriver.html";
+    }
+    function navigateToMyRide(){
+        window.location.href = "MyRide.html";
+    }
+    function navigateToMyMessage(){
+        window.location.href = "MyMessage.html";
+    }
+    function navigateToMyProfile(){
+        window.location.href = "MyProfile.html";
+    }
+</script>
 </html>

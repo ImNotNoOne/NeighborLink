@@ -13,9 +13,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            position: relative;
         }
-        .mobile-container{
+        .mobile-container {
             background-color: #ffffff;
             padding: 40px;
             border-radius: 8px;
@@ -25,21 +26,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
         #profile-button {
             position: absolute;
-            top: 20px;  /* Adjusted to vertically center with the search bar */
+            top: 20px;
             right: 10px;
             border: none;
-            background: url('resources/profile.png') no-repeat center center;  /* Placeholder profile image */
+            background: url('resources/profile.png') no-repeat center center;
             background-size: cover;
             width: 50px;
             height: 50px;
-            border-radius: 50%;  /* Makes the button round */
+            border-radius: 50%;
             cursor: pointer;
         }
         #search-container {
-            margin: 20px;
+            margin: 10px;
             width:90%;
             display:flex;
             justify-content: center;
@@ -65,12 +67,6 @@
             display: flex;
             justify-content: space-between;
         }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            box-sizing: border-box;
-        }
         button {
             padding: 10px 20px;
             background-color: #007bff;
@@ -82,36 +78,57 @@
         button:hover {
             background-color: #0056b3;
         }
-        #bottom-menu-bar-container{
+        .bottom-menu-bar-container {
+            position: absolute;
+            bottom: 10px;
+            width: 90%;
             display: flex;
-            margin-top: 100px;
-
+            justify-content: space-between; 
+        }
+        .menu-img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class = "mobile-container">
-        <button id="profile-button"></button> 
+    <div class="mobile-container">
+        <button id="profile-button"></button>
+        <div id="search-container">
+            <input type="text" placeholder="Enter your departure location...">
+        </div>
         <div id="search-container">
             <input type="text" placeholder="Enter your destination...">
-           
         </div>
         <div id="search-container">
             <input type="text" placeholder="Enter your departure time">
-           
         </div>
         <div id="map-image"></div>
         <div id="button-container">
-            <button type="button">Request Ride</button>
+            <button type="button">Public Ride</button>
             <button type="button">Cancel</button>
         </div>
-
-        <div id="bottom-menu-bar-container">
-            <button type="button">New Ride</button>
-            <button type="button">My Ride</button>
-            <button type="button">My Profile</button>
-            <button type="button">Message</button>
+        <div class="bottom-menu-bar-container">
+            <img src="resource/home_icon.png" class="menu-img" onclick="navigateToDashBoard()">
+            <img src="resource/rider_icon.png" class="menu-img" onclick="navigateToMyRide()">
+            <img src="resource/user_icon.png" class="menu-img" onclick="navigateToMyProfile()">
+            <img src="resource/chat_icon.png" class="menu-img" onclick="navigateToMyMessage()">
         </div>
     </div>
 </body>
+<script>
+    function navigateToDashBoard(){
+        window.location.href = "dashboardDriver.html";
+    }
+    function navigateToMyRide(){
+        window.location.href = "MyRide.html";
+    }
+    function navigateToMyMessage(){
+        window.location.href = "MyMessage.html";
+    }
+    function navigateToMyProfile(){
+        window.location.href = "MyProfile.html";
+    }
+</script>
 </html>

@@ -13,20 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            position: relative;
-        }
-        .mobile-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
-            width: 400px;
-            height: 800px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
+            height: 100vh;
         }
         .message-container {
             max-width: 360px;
@@ -72,17 +59,15 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .bottom-menu-bar-container {
-            position: absolute;
-            bottom: 10px;
-            width: 90%;
+        #bottom-menu-bar-container{
             display: flex;
-            justify-content: space-between; 
+            justify-content: space-between;
+            margin-top: 80px;
+            width: 100%;
         }
-        .menu-img {
+        .menu-img{
             width: 20px;
             height: 20px;
-            cursor: pointer;
         }
     </style>
 </head>
@@ -105,26 +90,23 @@
         </div>
         <!-- More messages here -->
     </div>
-    <div class="bottom-menu-bar-container">
+    <div id="bottom-menu-bar-container">
         <img src="resource/home_icon.png" class="menu-img" onclick="navigateToDashBoard()">
-        <img src="resource/rider_icon.png" class="menu-img" onclick="navigateToMyRide()">
-        <img src="resource/user_icon.png" class="menu-img" onclick="navigateToMyProfile()">
-        <img src="resource/chat_icon.png" class="menu-img" onclick="navigateToMyMessage()">
+            <img src="resource/rider_icon.png" class="menu-img" onclick="navigateToMyRide()">
+            <img src="resource/user_icon.png" class="menu-img" onclick="navigateToMyProfile()">
+            <img src="resource/chat_icon.png" class="menu-img" onclick="navigateToMyMessage()">
     </div>
 </div>
 
 <script>
+    function exit() {
+        // Redirect or close the window
+        // For demonstration, let's close the window
+        window.close();
+    }
+
     function navigateToDashBoard(){
-        window.location.href = "dashboardDriver.html";
-    }
-    function navigateToMyRide(){
-        window.location.href = "MyRide.html";
-    }
-    function navigateToMyMessage(){
-        window.location.href = "MyMessage.html";
-    }
-    function navigateToMyProfile(){
-        window.location.href = "MyProfile.html";
+        window.location.href = "dashboardRider.html";
     }
 </script>
 

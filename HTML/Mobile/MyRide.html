@@ -16,6 +16,10 @@
             min-height: 100vh;
             position: relative;
         }
+        p{
+            margin-bottom: 0px;
+            margin-top: 1.4rem;
+        }
         .mobile-container {
             background-color: #ffffff;
             padding: 40px;
@@ -29,12 +33,13 @@
             position: relative;
         }
         button {
-            padding: 10px 20px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            position:relative;
+            height: 20px;
         }
         button:hover {
             background-color: #0056b3;
@@ -45,11 +50,36 @@
 
         }
         .trip-card{
-            width: 80%;
-            height: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: relative;
+            width: 22rem;
+            height: 23%;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
             background-color: #fffafa;
             margin-top: 10px;
+            padding-left: 0.5rem;
+        }
+        .status-indicator {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        .status-indicator-driver{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #DB4D6D;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
         }
         .bottom-menu-bar-container {
             position: absolute;
@@ -58,38 +88,72 @@
             display: flex;
             justify-content: space-between; 
         }
+        .comment-indicator{
+            padding-left: 0;
+            width: 21rem;
+        }
+        .comment-indicator-driver{
+            padding-left: 0;
+            width: 21rem;
+            background-color: #DB4D6D;
+        }
         .menu-img {
             width: 20px;
             height: 20px;
             cursor: pointer;
         }
+        #success-msg {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .driver{
+            color:#DB4D6D;
+            background-color: #DB4D6D;
+        }
     </style>
 </head>
 <body>
-    <div class = "mobile-container">
+    <div class="mobile-container">
         <div class="trip-card">
-            <p>From   to    </p>
-            <p>As Rider/Driver</p>
-            <p>Money Made/Spend</p>
-            <p>Comment</p>
+            <div class="status-indicator">To be confirmed Trip</div>
+            <p>From Rosebery to USYD J12</p>
+            <p>As Rider</p>
+            <p>Agreed Payment: 10</p>
+            <button class="comment-indicator" onclick="navigateToMyMessage()">Message Driver</button>
         </div>
         <div class="trip-card">
-            <p>From   to    </p>
-            <p>As Rider/Driver</p>
-            <p>Money Made/Spend</p>
-            <p>Comment</p>
+            <div class="status-indicator-driver" >2/4</div>
+            <p>From Wentworthpoint to USYD J12</p>
+            <p>As Driver riding 3 riders</p>
+            <p>Total Recived: 23.23</p>
+            <button class="comment-indicator-driver" onclick="navigateToMyMessage()">Message Current Riders</button>
         </div>
         <div class="trip-card">
-            <p>From   to    </p>
-            <p>As Rider/Driver</p>
-            <p>Money Made/Spend</p>
-            <p>Comment</p>
+            <div class="status-indicator">Comfiremed Trip √</div>
+            <p>From USYD J12 to Wentworthpoint</p>
+            <p>As Rider</p>
+            <p>Total Payment: 25</p>
+            <button class="comment-indicator" onclick="navigateToMyMessage()">Message Driver</button>
         </div>
         <div class="bottom-menu-bar-container">
             <img src="resource/home_icon.png" class="menu-img" onclick="navigateToDashBoard()">
             <img src="resource/rider_icon.png" class="menu-img" onclick="navigateToMyRide()">
             <img src="resource/user_icon.png" class="menu-img" onclick="navigateToMyProfile()">
             <img src="resource/chat_icon.png" class="menu-img" onclick="navigateToMyMessage()">
+        </div>
+        <div class="trip-card">
+            <div class="status-indicator-driver" >3/3 √</div>
+            <p>From Mascot to Burwood</p>
+            <p>As Driver riding 3 riders</p>
+            <p>Total Recived: 23.23</p>
+            <button class="comment-indicator-driver" onclick="navigateToReview('rider')">Give Comment to rider(s)</button>
         </div>
     </div>
 </body>
@@ -105,6 +169,9 @@
     }
     function navigateToMyProfile(){
         window.location.href = "MyProfile.html";
+    }
+    function navigateToReview(){
+        window.location.href = "Review.html";
     }
 </script>
 </html>

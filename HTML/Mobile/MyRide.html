@@ -126,21 +126,21 @@
             <p>From Rosebery to USYD J12</p>
             <p>As Rider</p>
             <p>Agreed Payment: 10</p>
-            <button class="comment-indicator" onclick="navigateToMyMessage()">Message Driver</button>
+            <button class="comment-indicator" onclick="navigateToMessageDetail()">Message Driver</button>
         </div>
         <div class="trip-card">
             <div class="status-indicator-driver" >2/4</div>
             <p>From Wentworthpoint to USYD J12</p>
             <p>As Driver riding 3 riders</p>
             <p>Total Recived: 23.23</p>
-            <button class="comment-indicator-driver" onclick="navigateToMyMessage()">Message Current Riders</button>
+            <button class="comment-indicator-driver" onclick="navigateToMessageDetail()">Message Current Riders</button>
         </div>
         <div class="trip-card">
             <div class="status-indicator">Comfiremed Trip √</div>
             <p>From USYD J12 to Wentworthpoint</p>
             <p>As Rider</p>
             <p>Total Payment: 25</p>
-            <button class="comment-indicator" onclick="navigateToMyMessage()">Message Driver</button>
+            <button class="comment-indicator" onclick="navigateToMessageDetail()">Message Driver</button>
         </div>
         <div class="bottom-menu-bar-container">
             <img src="resource/home_icon.png" class="menu-img" onclick="navigateToDashBoard()">
@@ -172,6 +172,9 @@
     }
     function navigateToReview(){
         window.location.href = "Review.html";
+    }
+    function navigateToMessageDetail(){
+        window.location.href = "MessageDetail.html";
     }
 </script>
 </html>

@@ -47,9 +47,10 @@
             cursor: pointer;
         }
         #left{
-           background-color: gray;
+           
         }   
         #right{
+            background-color: gray;
         }
         #search-container {
             margin: 10px;
@@ -102,15 +103,27 @@
             height: 20px;
             cursor: pointer;
         }
+        .trip-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: relative;
+            width: 22rem;
+            height: 23%;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            background-color: #fffafa;
+            margin-top: 10px;
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="mobile-container">
         <div class="top-navigater-bar">
-            <div class="navigater-button" id="left" >
+            <div class="navigater-button" id="left" onclick="switchToOther()">
                 I am Driver
             </div>
-            <div class="navigater-button" id="right" onclick="switchToOther()">
+            <div class="navigater-button" id="right">
                 I am Rider
             </div>
         </div>
@@ -120,15 +133,26 @@
         <div id="search-container">
             <input type="text" placeholder="Enter your destination...">
         </div>
-        <div id="search-container">
-            <input type="text" placeholder="Enter your departure time">
+        <div class="trip-card">
+            <div>From:</div>
+            <div>Distance to your location:</div>
+            <div>To:</div>
+            <div>Distance to your destination:</div>
+            <div>Departure Time:</div>
         </div>
-        <div id="map-image">
-            <img src="/Mobile/resource/map.png" alt="">
+        <div class="trip-card">
+            <div>From:</div>
+            <div>Distance to your location:</div>
+            <div>To:</div>
+            <div>Distance to your destination:</div>
+            <div>Departure Time:</div>
         </div>
-        <div id="button-container">
-            <button type="button" onclick="submitComment()">Public Ride</button>
-            <button type="button" >Clear</button>
+        <div class="trip-card">
+            <div>From:</div>
+            <div>Distance to your location:</div>
+            <div>To:</div>
+            <div>Distance to your destination:</div>
+            <div>Departure Time:</div>
         </div>
         <div class="bottom-menu-bar-container">
             <img src="resource/home_icon.png" class="menu-img" onclick="navigateToDashBoard()">
@@ -153,7 +177,7 @@
         document.getElementById('success-msg').style.display = 'block';
     }
     function switchToOther(){
-        window.location.href = "dashboardRider.html"
+        window.location.href = "dashboardDriver.html"
     }
 </script>
 </html>
